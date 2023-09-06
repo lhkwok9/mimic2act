@@ -223,7 +223,7 @@ def eval_bc(config, ckpt_name, save_episode=True):
         # env_max_reward = env.task.max_reward
 
         # create robomimic environment from saved checkpoint
-        mimic_ckpt_path = '../bc_rnn_trained_models/PickPlaceCan_Aug5_image/20230806183700/models/model_epoch_380.pth'
+        mimic_ckpt_path = '../bc_rnn_trained_models/PickPlaceCan_Aug5_low_dim/model_epoch_50_PickPlaceCan_success_0.0.pth'
         _, ckpt_dict = FileUtils.policy_from_checkpoint(ckpt_path=mimic_ckpt_path, verbose=False)
         env, _ = FileUtils.env_from_checkpoint(
             ckpt_dict=ckpt_dict, 
