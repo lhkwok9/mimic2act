@@ -56,19 +56,21 @@ cd ~/mimic2act/act/detr && pip install -e .
 ### Extracting Observations from MuJoCo states
 [reference link](https://robomimic.github.io/docs/datasets/robosuite.html)
 ```
+# u can change the number and the dimension of images in training data here
 cd ~/mimic2act/robomimic/robomimic/scripts
 python dataset_states_to_obs.py --dataset /path/to/demo.hdf5 --output_name image.hdf5 --camera_names agentview robot0_eye_in_hand --camera_height 84 --camera_width 84 --exclude-next-obs
 ```
-check dataset_dir, camera_names in sim_pick_place_can in act/constants.py
 
 ### Training
+check dataset_dir, camera_names in sim_pick_place_can in act/constants.py
 ```
 cd ~/mimic2act/scripts
 python trainACT.py --task_name sim_pick_place_can --policy_class ACT --kl_weight 10 --chunk_size 100 --hidden_dim 512 --batch_size 8 --dim_feedforward 3200 --num_epochs 2000  --lr 1e-5 --seed 1 --ckpt_dir /folder/to/save/models
 ```
 
 ### Validation
-check line 109 ckpt_names
+Find a trained robomimic model in the same environment (e.g. PickPlaceCan with image obs) and add its path to line 226 (TODO: make this step more convinient)
+check line 109 ckpt_names for the models' name to be tested
 ```
 cd ~/mimic2act/scripts
 python trainACT.py --task_name sim_pick_place_can --policy_class ACT --kl_weight 10 --chunk_size 100 --hidden_dim 512 --batch_size 8 --dim_feedforward 3200 --num_epochs 2000  --lr 1e-5 --seed 1 --ckpt_dir /folder/to/saved/models --eval --temporal_agg
