@@ -18,3 +18,7 @@ act_trained_models/
 # testing scripts and result
 scripts/*.txt
 scripts/*.sh
+scripts/add7collision.py
+scripts/distribution.py
+scripts/plot.py
+scripts/trainACT_Aug30.py
