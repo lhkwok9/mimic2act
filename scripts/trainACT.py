@@ -105,8 +105,8 @@ def main(args):
 
     if is_eval:
         # ckpt_names = [f'policy_epoch_500_seed_1.ckpt']
-        # ckpt_names = [f'policy_last.ckpt']
-        ckpt_names = ['policy_best.ckpt', 'policy_last.ckpt', 'policy_epoch_500_seed_1.ckpt', 'policy_epoch_1000_seed_1.ckpt', 'policy_epoch_1500_seed_1.ckpt']
+        ckpt_names = [f'policy_epoch_0_seed_1.ckpt']
+        # ckpt_names = ['policy_best.ckpt', 'policy_last.ckpt', 'policy_epoch_500_seed_1.ckpt', 'policy_epoch_1000_seed_1.ckpt', 'policy_epoch_1500_seed_1.ckpt']
         results = []
         for ckpt_name in ckpt_names:
             success_rate, avg_return = eval_bc(config, ckpt_name, save_episode=True)
@@ -223,7 +223,7 @@ def eval_bc(config, ckpt_name, save_episode=True):
         # env_max_reward = env.task.max_reward
 
         # create robomimic environment from saved checkpoint
-        mimic_ckpt_path = '../bc_rnn_trained_models/PickPlaceCan_Aug5_low_dim/model_epoch_50_PickPlaceCan_success_0.0.pth'
+        mimic_ckpt_path = '/home/jk/mimic2aloha_Aug30/bc_rnn_trained_models/PickPlaceCan_Aug5_image/20230806183700/models/model_epoch_20.pth'
         _, ckpt_dict = FileUtils.policy_from_checkpoint(ckpt_path=mimic_ckpt_path, verbose=False)
         env, _ = FileUtils.env_from_checkpoint(
             ckpt_dict=ckpt_dict, 
