@@ -11,9 +11,7 @@ data_collection/PickPlaceCan_Aug5_quat_hdf5/image_hd.hdf5
 data_collection/PickPlaceCan_Aug5_quat_hdf5/image.hdf5
 
 # too large didn't include
-bc_rnn_trained_models/*
-!bc_rnn_trained_models/PickPlaceCan_Aug5_low_dim
-bc_rnn_trained_models/PickPlaceCan_Aug5_low_dim/20230805210738
+bc_rnn_trained_models/
 act_trained_models/
 # bc_rnn_trained_models/Can_Jul16_MH_image_no_quat_filtered/20230716231433/models
 
