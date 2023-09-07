@@ -80,5 +80,5 @@ python trainACT.py --task_name sim_pick_place_can --policy_class ACT --kl_weight
 ```
 Add --temporal_agg for temporal aggregation of actions
 
-If u change the task, Find a trained robomimic model in the same environment (e.g. PickPlaceCan with image obs) and add its path to line 226 in trainACT.py(TODO: make this step more convinient)
-check line 109 ckpt_names for the models' name to be tested
+If u change the task, Find a trained robomimic model in the same environment (e.g. PickPlaceCan with image obs) and add its path to line 220 in trainACT.py(TODO: make this step more convinient)
+check line 103 ckpt_names for the models' name to be tested
