@@ -52,6 +52,7 @@ pip install ipython
 cd ~/mimic2act/act/detr && pip install -e .
 ```
 -------
+## Training and Testing
 
 ### Extracting Observations from MuJoCo states
 [reference link](https://robomimic.github.io/docs/datasets/robosuite.html)
