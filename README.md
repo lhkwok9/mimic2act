@@ -55,8 +55,11 @@ cd ~/mimic2act/act/detr && pip install -e .
 
 ### Extracting Observations from MuJoCo states
 [reference link](https://robomimic.github.io/docs/datasets/robosuite.html)
+
 PickPlaceCan data is in ~/mimic2act/data_collection/PickPlaceCan_Aug5_quat_hdf5/demo.hdf5
+
 remove camera names for low_dim observation only
+
 change camera resolution from camera_height and camera_width
 ```
 # u can change the number and the dimension of images in training data here
