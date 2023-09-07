@@ -71,7 +71,7 @@ python trainACT.py --task_name sim_pick_place_can --policy_class ACT --kl_weight
 ```
 change dataset_dir, camera_names in sim_pick_place_can in act/constants.py if u want to use another dataset or cameras
 
-### Validation
+### Testing
 Download [model](https://drive.google.com/file/d/1sb9ir9Hwjlaw7lBqv5lcpiei_2rMKzWB/view?usp=drive_link) to ~/mimic2act
 ```
 cd ~/mimic2act/scripts
