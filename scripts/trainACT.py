@@ -1,9 +1,3 @@
-"""
-example usage of val with temporal agg:
-
-python trainACT.py --task_name sim_pick_place_can --policy_class ACT --kl_weight 10 --chunk_size 100 --hidden_dim 512 --batch_size 8 --dim_feedforward 3200 --num_epochs 2000  --lr 1e-5 --seed 1 --ckpt_dir /home/jk/mimic2aloha_Aug30/act_trained_models/Sep2 --eval --temporal_agg
-"""
-
 import torch
 import numpy as np
 import os
@@ -105,8 +99,8 @@ def main(args):
 
     if is_eval:
         # ckpt_names = [f'policy_epoch_500_seed_1.ckpt']
-        ckpt_names = [f'policy_epoch_0_seed_1.ckpt']
-        # ckpt_names = ['policy_best.ckpt', 'policy_last.ckpt', 'policy_epoch_500_seed_1.ckpt', 'policy_epoch_1000_seed_1.ckpt', 'policy_epoch_1500_seed_1.ckpt']
+        # ckpt_names = [f'policy_epoch_0_seed_1.ckpt']
+        ckpt_names = ['policy_best.ckpt', 'policy_last.ckpt', 'policy_epoch_500_seed_1.ckpt', 'policy_epoch_1000_seed_1.ckpt', 'policy_epoch_1500_seed_1.ckpt']
         results = []
         for ckpt_name in ckpt_names:
             success_rate, avg_return = eval_bc(config, ckpt_name, save_episode=True)
@@ -223,7 +217,7 @@ def eval_bc(config, ckpt_name, save_episode=True):
         # env_max_reward = env.task.max_reward
 
         # create robomimic environment from saved checkpoint
-        mimic_ckpt_path = '/home/jk/mimic2aloha_Aug30/bc_rnn_trained_models/PickPlaceCan_Aug5_image/20230806183700/models/model_epoch_20.pth'
+        mimic_ckpt_path = '~mimic2act/model_epoch_20.pth'
         _, ckpt_dict = FileUtils.policy_from_checkpoint(ckpt_path=mimic_ckpt_path, verbose=False)
         env, _ = FileUtils.env_from_checkpoint(
             ckpt_dict=ckpt_dict, 

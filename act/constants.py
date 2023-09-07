@@ -35,7 +35,7 @@ SIM_TASK_CONFIGS = {
         'dataset_dir': "../data_collection/PickPlaceCan_Aug5_quat_hdf5/image.hdf5",
         'num_episodes': 142,
         'episode_len': 500,
-        'camera_names': ['agentview_image'] #['agentview_image', 'robot0_eye_in_hand_image']
+        'camera_names': ['agentview_image', 'robot0_eye_in_hand_image']
     },
 }
 
