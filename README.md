@@ -69,7 +69,8 @@ change camera_height to 480 and camera_width to 640 if u want to follow the pape
 cd ~/mimic2act/scripts
 python trainACT.py --task_name sim_pick_place_can --policy_class ACT --kl_weight 10 --chunk_size 100 --hidden_dim 512 --batch_size 8 --dim_feedforward 3200 --num_epochs 2000  --lr 1e-5 --seed 1 --ckpt_dir ~/mimic2act/act_trained_models/PickPlaceCan_Aug5
 ```
-change dataset_dirin sim_pick_place_can in act/constants.py if u want to use another dataset
+change dataset_dir in sim_pick_place_can in act/constants.py if u want to use another dataset
+
 change camera_names in sim_pick_place_can in act/constants.py if u want to use only one cameras
 
 ### Testing
